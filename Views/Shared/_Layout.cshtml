@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - uc8ativ5_Robinson</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!--BootStrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- JS for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- CSS for searching -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- JS for searching -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!--CCS personalizado-->
+    <!--<link href="~/css/style.css" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="page">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo-container">
+                        <div class="logo-container">
+                            <img class="logo-sidebar" src="~/assets/img/logo.png" />
+                        </div>
+                        <div class="brand-name-container">
+                            <p class="brand-name">
+                                Colégio Santa Rosa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="siderbarbody">
+                    <ul class="navigation-list">
+                        @if(ViewBag.isLogon == false)
+                        {
+                            <!-- Menu Home-->
+                            <div class="navigation-list-item" id="product-filter-accordion">
+                                <div id="product-filter-sidebar-manufacturers" role="complementary">
+                                    <li>
+                                        <a class="navigation-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="fas fa-home"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    Home
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <!-- Menu Login-->
+                            <div class="navigation-list-item" id="product-filter-accordion">
+                                <div id="product-filter-sidebar-manufacturers" role="complementary">
+                                    <li>
+                                        <a class="navigation-link" asp-area="" asp-controller="Login" asp-action="Login">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                   <i class="bi bi-caret-right-fill"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    Login
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+
+                            <!-- Menu Home-->
+                            <div class="navigation-list-item" id="product-filter-accordion">
+                                <div id="product-filter-sidebar-manufacturers" role="complementary">
+                                    <li>
+                                        <a class="navigation-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="fas fa-home"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    Home
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <!-- Recados-->
+                            <div class="navigation-list-item" id="product-filter-accordion">
+                                <div id="product-filter-sidebar-manufacturers" role="complementary">
+                                    <li>
+                                        <a data-bs-toggle="collapse" data-bs-target="#collapse-manufacturersRecados"
+                                        aria-controls="collapse-manufacturers" aria-expanded="false"
+                                        class="navigation-link">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="bi bi-receipt-cutoff"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    Recados
+                                                    <i class="fas fa-angle-down"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div id="collapse-manufacturersRecados" aria-labelledby="heading-manufacturers"
+                                    data-bs-parent="#product-filter-accordion" class="accordion-collapse collapse">
+                                        <!--Recados Cadastrar-->
+                                    <div class="accordion-body">
+                                            <a asp-area="" asp-controller="Recados" asp-action="CadastroRecados"
+                                            class="navigation-link">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <i class="fas fa-kaaba"></i>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        Cadastrar
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!--Recados Consultar-->
+                                    <div class="accordion-body">
+                                            <a asp-area="" asp-controller="Recados" asp-action="ListarRecados"
+                                            class="navigation-link">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                       <i class="bi bi-people-fill"></i>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        Consulta
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Usuario-->
+                            <div class="navigation-list-item" id="product-filter-accordion">
+                                <div id="product-filter-sidebar-manufacturers" role="complementary">
+                                    <li>
+                                        <a data-bs-toggle="collapse" data-bs-target="#collapse-manufacturersUsers"
+                                        aria-controls="collapse-manufacturers" aria-expanded="false"
+                                        class="navigation-link">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    Usuários
+                                                    <i class="fas fa-angle-down"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div id="collapse-manufacturersUsers" aria-labelledby="heading-manufacturers"
+                                    data-bs-parent="#product-filter-accordion" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <a asp-area="" asp-controller="Usuario" asp-action="CadastroUsuarios"
+                                            class="navigation-link">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <i class="fas fa-kaaba"></i>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        Cadastro
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="accordion-body">
+                                            <a asp-area="" asp-controller="Usuario" asp-action="ListarUsuarios"
+                                            class="navigation-link">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <i class="bi bi-people-fill"></i>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        Consulta
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Turmas-->
+                            <div class="navigation-list-item" id="product-filter-accordion">
+                                <div id="product-filter-sidebar-manufacturers" role="complementary">
+                                    <li>
+                                        <a data-bs-toggle="collapse" data-bs-target="#collapse-manufacturersTurmas"
+                                        aria-controls="collapse-manufacturers" aria-expanded="false"
+                                        class="navigation-link">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                    Turmas
+                                                    <i class="fas fa-angle-down"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div id="collapse-manufacturersTurmas" aria-labelledby="heading-manufacturers"
+                                    data-bs-parent="#product-filter-accordion" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <a asp-area="" asp-controller="Turmas" asp-action="CadastroTurmas"
+                                            class="navigation-link">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <i class="fas fa-kaaba"></i>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        Cadastro
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="accordion-body">
+                                            <a asp-area="" asp-controller="Turmas" asp-action="ListarTurmas"
+                                            class="navigation-link">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <i class="bi bi-people-fill"></i>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        Consulta
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Fim turmas-->
+                             <!-- Menu Home-->
+                            <div class="navigation-list-item" id="product-filter-accordion">
+                                <div id="product-filter-sidebar-manufacturers" role="complementary">
+                                    <li>
+                                        <a class="navigation-link" asp-area="" asp-controller="Login" asp-action="Logout">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <i class="bi bi-power"></i>
+                                                </div>
+                                                <div class="col-9">
+                                                   Logout
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </div>
+                            </div>
+                             <!--Fim Logout-->
+                        }
+
+                    </ul>
+                </div> <!-- div class siderbarbody-->
+            </div> <!-- div class sidebar-->
+
+            <div class="content">
+                <div class="navigationBar">
+                    <a>
+                        <button id="sidebarToggle" class="btn sidebarToggle">
+                            <i class="fas fa-bars"></i>
+                    </a>
+                </div> <!-- div navigationBar-->
+            </div><!-- div content-->
+        </div> <!-- div class page-->
+
+
+        <script>
+            let sidebarToggle = document.querySelector(".sidebarToggle");
+            sidebarToggle.addEventListener("click", function () {
+                document.querySelector("body").classList.toggle("active");
+                document.getElementById("sidebarToggle").classList.toggle("active");
+            })
+        </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+            </script>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - uc8ativ3_Robinson - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

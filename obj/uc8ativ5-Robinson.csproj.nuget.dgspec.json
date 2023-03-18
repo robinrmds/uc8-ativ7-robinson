@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "G:\\Meu Drive\\Faculdade\\CursoTecnico\\uc8\\uc8ativ5-Robinson\\uc8ativ5-Robinson.csproj": {}
+  },
+  "projects": {
+    "G:\\Meu Drive\\Faculdade\\CursoTecnico\\uc8\\uc8ativ5-Robinson\\uc8ativ5-Robinson.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\Meu Drive\\Faculdade\\CursoTecnico\\uc8\\uc8ativ5-Robinson\\uc8ativ5-Robinson.csproj",
+        "projectName": "uc8ativ5-Robinson",
+        "projectPath": "G:\\Meu Drive\\Faculdade\\CursoTecnico\\uc8\\uc8ativ5-Robinson\\uc8ativ5-Robinson.csproj",
+        "packagesPath": "C:\\Users\\Robinson\\.nuget\\packages\\",
+        "outputPath": "G:\\Meu Drive\\Faculdade\\CursoTecnico\\uc8\\uc8ativ5-Robinson\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Robinson\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.1.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.420\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

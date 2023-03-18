@@ -1,0 +1,74 @@
+@model UsuarioOBJ
+@{
+    ViewData["Title"] = "Cadastro de Usuários";
+}
+
+<script type="text/javascript" src="~/js/site.js"></script>
+<main class="type-user">
+    <form class="form-cad-users" method="POST" asp-action="CadastroUsuarios">
+        <div class="">
+            <p>
+                <input type="submit" value="Salvar">
+                <button onclick="location.href='ListarUsuarios'" type="button">Cancelar</button>
+
+                <hr class="inputs">
+            </p>
+            <label class="labels" for="usertype">Tipo de usuário</label>
+            <div class="checkboxes" >
+                <input type="checkbox" id="EhAluno" name="EhAluno" asp-for="EhAluno"
+                    onclick="isChecked('EhAluno',['Responsavel','respon_label','check_turmas','lab_turma','lab_matricula','Matricula'])" />
+                <label for="aluno">Aluno</label>
+                <input type="checkbox" id="EhProfessor" name="EhProfessor" asp-for="EhProfessor"
+                    onclick="isChecked('EhProfessor',['lab_cpf','cpf','login_hr','login_input','login_label','passwd_label','passwd_input'])">
+                <label for="professor">Professor</label>
+                <input type="checkbox" id="EhFuncionario" name="EhFuncionario" asp-for="EhFuncionario"
+                    onclick="isChecked('EhFuncionario',['lab_cpf','cpf','login_hr','login_input','login_label','passwd_label','passwd_input'])">
+                <label for="funcionario">Funcionário</label>
+                <input type="checkbox" id="EhResponsavel" name="EhResponsavel" asp-for="EhResponsavel"
+                    onclick="isChecked('EhResponsavel',['lab_cpf','cpf','login_hr','login_input','login_label','passwd_label','passwd_input'])">
+                <label for="responsavel">Responsável</label>
+                <hr class="inputs">
+            </div>
+            <label class="labels" for="usertype">Ativo</label>
+            <input type="checkbox" id="EhAtivo" asp-for="Status">
+            <label class="labels">Nome</label>
+            <input type="text" class="inputs" asp-for="Nome" id="Nome" required/>
+            <label class="labels" id='lab_matricula' for="Matricula" hidden>Matrícula</label>
+            <input type="text" class="inline num" asp-for="Matricula" id="Matricula" hidden />
+
+            <label class="labels" id="lab_turma" for="check_turmas" hidden>Turma</label>
+            <select class="checkboxes" id="check_turmas" asp-for="Turma" hidden>
+                <option value="">Escolha uma turma...</option>
+                @foreach (TurmaOBJ turmas in ViewBag.ListaTurmas)
+                {
+                    <option value=@turmas.Id>@turmas.Turma</option>
+                }
+            </select>
+            <label class="labels" for="cpf" id="lab_cpf" hidden>CPF</label>
+            <input type="text" class="inline" id="cpf" placeholder="___.___.___-__" asp-for="Cpf" hidden />
+            <label class="labels" for="telefone">Contato</label>
+            <input type="text" class="inline" id="telefone" placeholder="(__)____-____" asp-for="Telefone" required />
+            <input type="text" class="inline" id="email" placeholder="Email" asp-for="Email" required/>
+            <hr class="inputs" id=login_hr hidden>
+            <label class="labels" for="login" id="login_label" hidden>Login</label>
+            <input type="text" class="inputs" id="login_input" asp-for="Login" hidden />
+            <label class="labels" for="login" id="passwd_label" hidden>Senha</label>
+            <input type="password" class="inputs" id="passwd_input" asp-for="Senha" hidden />
+            <hr class="inputs" id=login_hr hidden>
+            <label class="labels" for="Responsavel" id="respon_label" hidden>Responsável</label>
+            <select class="inputs" id="Responsavel" asp-for="ResponsavelID" hidden>
+                <option value="">Seleciona um responsável</option>
+                @foreach (UsuarioOBJ usuarioResp in ViewBag.ListResponsavel)
+                {
+                    <option value=@usuarioResp.Id>@usuarioResp.Nome |@usuarioResp.Cpf</option>
+                }
+            </select>
+            <hr class="inputs" hidden>
+            <label class="labels" for="endereco">Endereço</label>
+            <input type="text" class="inline" asp-for="Endereco" placeholder="Digite o endereço completo"
+                id="endereco" required/>
+
+        </div>
+
+    </form>
+</main>

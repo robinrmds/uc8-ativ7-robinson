@@ -1,0 +1,33 @@
+@model RecadoOBJ
+@{
+    ViewData["Title"] = "Cadastro de Recados";
+}
+
+<div class="text-center">
+   <!-- <div id="header"></div>-->
+    <!--Será removido com a aplicação do CSS e javascrip-->
+
+    <main class="main">
+        <form class="form-cad-users" method="POST" asp-action="EditarRecados">
+            <input type="submit" value="Salvar">
+            <button   onclick="location.href='ListarRecados'" type="button">Cancelar</button>
+            
+            <hr class="inputs">
+            <label class="labels" for="Recado" hidden>Código</label>
+            <input type="text" class="inputs" id=id asp-for="Id" hidden/>
+            <input type="text" class="inputs" id=id2 asp-for="Id" disabled/>
+            <label class="labels" for="Recado">Sequência</label>
+            <input type="text" class="inputs" id=sequencia asp-for="Sequencia" required/>
+            <label class="labels" for="Recado">Título</label>
+            <input type="text" class="inputs" id=titulo asp-for="Assunto"required />
+            <label class="labels" for="Recado">Recado</label>
+            <textarea class="inputs" id=serie asp-for="Recado" rows="5" required></textarea>
+            
+            <label class="labels" for="ano">Data criação/Edição</label>
+            <input type="date" class="inputs" id="ano" asp-for="DataPublicacao" disabled/>
+            
+             <label class="labels" for="usertype">Ativo</label>
+            <input type="checkbox" id="EhAtivo" asp-for="Ativo">
+        </form>
+    </main>
+</div>

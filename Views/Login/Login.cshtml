@@ -1,0 +1,29 @@
+@model UsuarioOBJ
+@{
+
+    ViewData["Title"] = "Login";
+}
+<div class="menuLogin">
+    <form name="formulario" class="main" method="POST" asp-action="Login">
+        <p>
+            <div id="loginstatus"></div>
+            <label>Login</label>
+            <input id="login" asp-for="Login" onclick="toEmpy()" onblur="isEmpy('loginstatus',formulario.login,'Preencha o campo Login')">
+        </p>
+        <p>
+            <div id="senhastatus"></div>
+            <label>Senha</label>
+            <input type="password" asp-for="Senha" id="senha" onclick="toEmpy()" onblur="isEmpy('senhastatus',formulario.senha,'Preencha a Senha')">
+        </p>
+        <p>
+            <input type="submit" value="Entrar" onclick="checkLogin()" >
+           <!-- <button onclick="location.href='../Home/Index'" type="button">Cancelar</button> -->
+           <button onclick="checkLogin()" type="button">Cancelar</button>
+        </p>
+        <div id="status"></div>
+        <p id="ViewBag" class="ViewBag">
+            @ViewBag.Mensagem
+        </p>
+        
+    </form>
+</div>

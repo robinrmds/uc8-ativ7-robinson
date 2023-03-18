@@ -1,0 +1,49 @@
+@model TurmaOBJ
+@{
+    ViewData["Title"] = "Cadastro Turma";
+}
+
+<div class="text-center">
+    <div id="header"></div>
+    <!--Será removido com a aplicação do CSS e javascrip-->
+
+    <main class="main">
+        <form class="form-cad-users" method="POST" asp-action="CadastroTurmas">
+            <input type="submit" value="Salvar">
+            <button   onclick="location.href='ListarTurmas'" type="button">Cancelar</button>
+            
+            <hr class="inputs">
+            <label class="labels" for="turma">Turma</label>
+            <input type="text" class="inputs" id=turma asp-for="Turma" required />
+            <label class="labels" for="turma">Série</label>
+            <select type="text" class="inputs" id=serie asp-for="Serie" required>
+            <option value="">Escolha uma turma...</option>
+            <option value="PreI">Pré I</option>
+            <option value="PreII">Pré II</option>
+            <option value="1º Ano">1º Ano</option>
+            <option value="2º Ano">2º Ano</option>
+            <option value="3º Ano">3º Ano</option>
+            <option value="4º Ano">4º Ano</option>
+            <option value="5º Ano">5º Ano</option>
+            <option value="6º Ano">6º Ano</option>
+            <option value="7º Ano">7º Ano</option>
+            <option value="8º Ano">8º Ano</option>
+            <option value="9º Ano">9º Ano</option>
+            <option value="1ª Série">1ª Série</option>
+            <option value="2ª Série">2ª Série</option>
+            <option value="3ª Série">3ª Série</option>
+            </select>
+            <label class="labels" for="ano">Ano Letivo</label>
+            <input type="text" class="inputs" id="ano" asp-for="AnoLetivo" required/>
+            <label class="labels" for="ano">Turno</label>
+            <select type="text" class="inputs" id=turno asp-for="Turno" required >
+                <option value="">Escolha um turno...</option>
+                <option value="Manha">Manha</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Manha-Noite">Manhe e Noite</option>
+            </select>
+             <label class="labels" for="usertype">Ativo</label>
+            <input type="checkbox" id="EhAtivo" asp-for="Ativo" checked>
+        </form>
+    </main>
+</div>

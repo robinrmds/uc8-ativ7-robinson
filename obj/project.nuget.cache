@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9nAI2hdk8CFT7TKj65qTiBO74cgsIM22pwCLBQygk8S7iUaiVyYbxEpoZBKmQdPWYpLjuunf6/O+84P/TESUqg==",
+  "success": true,
+  "projectFilePath": "G:\\Meu Drive\\Faculdade\\CursoTecnico\\uc8\\uc8ativ5-Robinson\\uc8ativ5-Robinson.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Robinson\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512",
+    "C:\\Users\\Robinson\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

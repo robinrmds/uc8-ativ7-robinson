@@ -1,0 +1,55 @@
+@model IEnumerable<TurmaOBJ>
+
+@{
+    ViewData["Title"] = "Consulta Turmas";
+}
+<script type="text/javascript" src="~/js/site.js"></script>
+
+<main class="type-user">
+    <form class="form-cad-users">
+        <div class="">
+
+            <label class="labels" for="consulta">Consulta</label>
+            <input type="text" class="inputs" placeholder="Digite uma turma, série, ano letivo ou turno" id="pesquisa" onkeyup="searchInTables('pesquisa','myTableListaTurmas')" />
+            
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>Turma</th>
+                        <th>Série</th>
+                        <th>Ano Letivo</th>
+                        <th>Turno</th>
+                        <th>Ativa</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+            
+                <tbody id="myTableListaTurmas">
+                    @foreach (TurmaOBJ turma in Model)
+                    {
+                        <tr>
+                            <td style="text-align: center;">@turma.Turma</td>
+                            <td style="text-align: center;">@turma.Serie</td>
+                            <td style="text-align: center;">@turma.AnoLetivo</td>
+                            <td style="text-align: center;">@turma.Turno</td>
+                            @if (turma.Ativo)
+                            {
+                                <td style="text-align: center;">Ativa</td>
+                            }
+                            else
+                            {
+                                <td style="text-align: center;">Desativada</td>
+                            }
+                            <td style="text-align: center;">
+                                <a href="/Turmas/EditarTurmas?Id=@turma.Id"><i class="bi bi-pencil"></i></a>
+                                <a href="/Turmas/RemoverTurmas?Id=@turma.Id"><i class="bi bi-trash3"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+    </form>
+</main>

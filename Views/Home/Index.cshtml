@@ -1,0 +1,17 @@
+﻿@model IEnumerable<RecadoOBJ>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <main class="main">
+        @foreach (RecadoOBJ recado in Model)
+        {
+            <p>
+            <h1 style="text-align: center;">@recado.Assunto</h1>
+            <h6 style="text-align: center;">Data Publicação/Edição: @recado.DataPublicacao</h6>
+            <a style="text-align: center;">@recado.Recado</a>
+            </p>
+        }
+    </main>
+</div>
